@@ -31,13 +31,13 @@ WITH czechia AS (
 )
 SELECT 
 	e.year,
-    c.population AS cz_population,
-    c.gdp AS cz_gdp,
-    c.gini AS cz_gini,
+	c.population AS cz_population,
+	c.gdp AS cz_gdp,
+	c.gini AS cz_gini,
 	e.country,
-    e.population,
-    e.gdp,
-    e.gini
+	e.population,
+	e.gdp,
+	e.gini
 FROM europe e
 JOIN czechia c ON e.year = c.year
 ORDER BY e.year, c.country;
