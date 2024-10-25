@@ -201,7 +201,7 @@ Některá data chybí ve zdrojích dat.
 * **price_change_pcent** - Meziroční procentuální změna průměrné ceny potravin.
 * **delta** - Rozdíl mezi změnou mezd a změnou cen potravin.
 
-Některá data nelze získat pro první rok období (2006).“
+Některá data nelze získat pro první rok období (2006).
 
 ## 5_gdp_effect.sql
 > 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
