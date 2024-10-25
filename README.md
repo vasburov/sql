@@ -13,9 +13,7 @@
 > Na svém GitHub účtu vytvořte repozitář (může být soukromý), kam uložíte všechny informace k projektu – hlavně SQL skript generující výslednou tabulku, popis mezivýsledků (průvodní listinu) a informace o výstupních datech (například kde chybí hodnoty apod.).
 
 ## t_Vasyl_Burov_project_SQL_primary_final.sql
-Data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky.
-
-![Alt text](t_primary.png)
+Data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky.[^1]
 
 |year |industry_code|industry_name                                               |avg_salary|category_code|category                        |avg_price|gdp            |
 |-----|-------------|------------------------------------------------------------|----------|-------------|--------------------------------|---------|---------------|
@@ -29,6 +27,15 @@ Data mezd a cen potravin za Českou republiku sjednocených na totožné porovna
 |2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,401      |Kuřata kuchaná celá             |47.47    |197,470,142,754|
 |2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,704      |Šunkový salám                   |116.77   |197,470,142,754|
 |2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |114,201      |Mléko polotučné pasterované     |14.44    |197,470,142,754|
+
+* **year** - Kalendářní rok, ke kterému se data vztahují.
+* **industry_code** - Kód průmyslu, který identifikuje specifický sektor.
+* **industry_name** - Název průmyslu, který popisuje sektor ekonomiky.
+* **avg_salary** - Průměrná mzda v daném průmyslu.
+* **category_code** - Kód kategorie potravin.
+* **category** - Název kategorie potravin.
+* **avg_price** - Průměrná cena potravin.
+* **gdp** - Hrubý domácí produkt.
 
 Pro vytvoření primární tabulky bylo potřeba zjistit společné roky dat o příjmech a cenách potravin. Zde je pomocný skript pro zjištění tohoto období:
 
@@ -57,7 +64,7 @@ JOIN price_yrs price;
 |2006           |2018           |
 
 ## t_Vasyl_Burov_project_SQL_secondary_final.sql
-Dodatečná data o dalších evropských státech.[^1]
+Dodatečná data o dalších evropských státech.[^2]
 
 ![Alt text](t_secondary.png)
 
@@ -73,6 +80,17 @@ Dodatečná data o dalších evropských státech.[^1]
 |2,006|10,238,905   |197,470,142,754|26.7   |Croatia               |4,311,159  |61,197,075,794   |    |
 |2,006|10,238,905   |197,470,142,754|26.7   |Czech Republic        |10,238,905 |197,470,142,754  |26.7|
 |2,006|10,238,905   |197,470,142,754|26.7   |Denmark               |5,437,272  |331,090,561,928  |25.9|
+
+* **year** - Kalendářní rok, ke kterému se data vztahují.
+* **cz_population** - Počet obyvatel České republiky.
+* **cz_gdp** - Hrubý domácí produkt České republiky.
+* **cz_gini** - Giniho koeficient České republiky.
+* **country** - Název země, ke které se data vztahují.
+* **population** - Počet obyvatel dané země.
+* **gdp** - Hrubý domácí produkt dané země.
+* **gini** - Giniho koeficient dané země.
+
+Některá data chybí ve zdrojích dat.
 
 ## 1_wage_trends.sql
 > 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
@@ -99,6 +117,11 @@ Dodatečná data o dalších evropských státech.[^1]
 |R            |Kulturní, zábavní a rekreační činnosti                      |10      |2         |
 |B            |Těžba a dobývání                                            |8       |4         |
 
+* **industry_code** - Kód průmyslu, který identifikuje specifický sektor.
+* **industry_name** - Název průmyslu, který popisuje sektor ekonomiky.
+* **up_years** - Počet let, kdy došlo k růstu mezd v daném průmyslu.
+* **down_years** - Počet let, kdy došlo k poklesu mezd v daném průmyslu.
+
 ## 2_milk_bread_comparison.sql
 > 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 
@@ -108,6 +131,13 @@ Dodatečná data o dalších evropských státech.[^1]
 |2,006|20,754    |114,201      |Mléko polotučné pasterované|14.44    |1,437        |
 |2,018|32,536    |111,301      |Chléb konzumní kmínový     |24.24    |1,342        |
 |2,018|32,536    |114,201      |Mléko polotučné pasterované|19.82    |1,642        |
+
+* **year** - Kalendářní rok, ke kterému se data vztahují.
+* **avg_salary** - Průměrná mzda v dané kategorii.
+* **category_code** - Kód kategorie potravin.
+* **category** - Název kategorie potravin.
+* **avg_price** - Průměrná cena potravin v dané kategorii.
+* **affordability** - Dostupnost potravin na základě průměrné mzdy a ceny.
 
 ## 3_slowest_price_increase.sql
 > 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
@@ -141,6 +171,12 @@ Dodatečná data o dalších evropských státech.[^1]
 |111,602      |Těstoviny vaječné               |26.1      |47.87     |6.95       |
 |115,101      |Máslo                           |104.39    |207.08    |8.2        |
 
+* **category_code** - Kód kategorie potravin.
+* **category** - Název kategorie potravin.
+* **price_2006** - Průměrná cena potravin v dané kategorii v roce 2006.
+* **price_2018** - Průměrná cena potravin v dané kategorii v roce 2018.
+* **percent_yoy** - Meziroční procentuální změna cen potravin mezi rokem 2006 a 2018.
+
 ## 4_price_vs_wage_spike.sql
 > 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
@@ -159,6 +195,15 @@ Dodatečná data o dalších evropských státech.[^1]
 |2,018|32,536|7.6                |63   |2.2               |-5.4 |
 |2,009|24,674|3.2                |48   |-6.4              |-9.6 |
 |2,006|20,754|                   |46   |                  |     |
+
+* **year** - Kalendářní rok, ke kterému se data vztahují.
+* **salary** - Průměrná mzda v daném roce.
+* **salary_change_pcent** - Meziroční procentuální změna průměrné mzdy.
+* **price** - Průměrná cena potravin v daném roce.
+* **price_change_pcent** - Meziroční procentuální změna průměrné ceny potravin.
+* **delta** - Rozdíl mezi změnou mezd a změnou cen potravin.
+
+Některá data nelze získat pro první rok období (2006).“
 
 ## 5_gdp_effect.sql
 > 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
@@ -189,4 +234,7 @@ Dodatečná data o dalších evropských státech.[^1]
 
 Na základě dat, kde ABS(gdp_change_pcent) > 3 % (včetně poklesu o -4,7 % v roce 2009) - "pokud HDP vzroste výrazněji v jednom roce". Korelace mezi změnou HDP a změnou mzdy: 0,40 (střední pozitivní korelace). Korelace mezi změnou HDP a změnou cen: 0,80 (silná pozitivní korelace). Zatímco obě vztahy jsou pozitivní, změny cen se obvykle blíže drží změn HDP.
 
-[^1]: Pochopil jsem "jako primární přehled pro ČR" tak, že mám do každého řádku přidat sloupce s daty pro Českou republiku, aby moji kolegové mohli snadno porovnávat data evropských zemí s ČR.
+Některá data nelze získat pro první rok období (2006).
+
+[^1]:U některých dat se používá zaokrouhlení: HDP a mzdy na celá čísla, procenta na jedno desetinné místo, ceny na dvě desetinná místa.
+[^2]: Pochopil jsem "jako primární přehled pro ČR" tak, že mám do každého řádku přidat sloupce s daty pro Českou republiku, aby moji kolegové mohli snadno porovnávat data evropských zemí s ČR.
