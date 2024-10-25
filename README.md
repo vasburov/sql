@@ -13,7 +13,7 @@
 > Na svém GitHub účtu vytvořte repozitář (může být soukromý), kam uložíte všechny informace k projektu – hlavně SQL skript generující výslednou tabulku, popis mezivýsledků (průvodní listinu) a informace o výstupních datech (například kde chybí hodnoty apod.).
 
 ## t_Vasyl_Burov_project_SQL_primary_final.sql
-Data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky.[^1]
+> Data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky.[^1]
 
 |year |industry_code|industry_name                                               |avg_salary|category_code|category                        |avg_price|gdp            |
 |-----|-------------|------------------------------------------------------------|----------|-------------|--------------------------------|---------|---------------|
@@ -64,7 +64,7 @@ JOIN price_yrs price;
 |2006           |2018           |
 
 ## t_Vasyl_Burov_project_SQL_secondary_final.sql
-Dodatečná data o dalších evropských státech.[^2]
+> Dodatečná data o dalších evropských státech.[^2]
 
 ![Alt text](t_secondary.png)
 
