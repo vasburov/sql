@@ -11,6 +11,28 @@ Data mezd a cen potravin za Českou republiku sjednocených na totožné porovna
 
 ![Alt text](t_primary.png)
 
+Pro vytvoření primární tabulky bylo potřeba zjistit společné roky dat o příjmech a cenách potravin. Zde je pomocný skript pro zjištění tohoto období:
+
+```
+WITH payroll_yrs AS (
+    SELECT 
+        MIN(payroll_year) AS min_year, 
+        MAX(payroll_year) AS max_year
+    FROM czechia_payroll
+),
+price_yrs AS (
+    SELECT 
+        MIN(YEAR(date_from)) AS min_year, 
+        MAX(YEAR(date_from)) AS max_year
+    FROM czechia_price
+)
+SELECT 
+    GREATEST(pay.min_year, price.min_year) AS common_min_year,
+    LEAST(pay.max_year, price.max_year) AS common_max_year
+FROM payroll_yrs pay
+JOIN price_yrs price;
+```
+
 ## t_Vasyl_Burov_project_SQL_secondary_final.sql
 Dodatečná data o dalších evropských státech.[^1]
 
