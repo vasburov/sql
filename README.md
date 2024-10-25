@@ -17,6 +17,19 @@ Data mezd a cen potravin za Českou republiku sjednocených na totožné porovna
 
 ![Alt text](t_primary.png)
 
+|year |industry_code|industry_name                                               |avg_salary|category_code|category                        |avg_price|gdp            |
+|-----|-------------|------------------------------------------------------------|----------|-------------|--------------------------------|---------|---------------|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |111,101      |Rýže loupaná dlouhozrnná        |21.29    |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |111,201      |Pšeničná mouka hladká           |7.41     |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |111,301      |Chléb konzumní kmínový          |16.12    |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |111,303      |Pečivo pšeničné bílé            |38.6     |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |111,602      |Těstoviny vaječné               |26.1     |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,101      |Hovězí maso zadní bez kosti     |166.34   |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,201      |Vepřová pečeně s kostí          |105.18   |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,401      |Kuřata kuchaná celá             |47.47    |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |112,704      |Šunkový salám                   |116.77   |197,470,142,754|
+|2,006|A            |Zemědělství, lesnictví, rybářství                           |14,619    |114,201      |Mléko polotučné pasterované     |14.44    |197,470,142,754|
+
 Pro vytvoření primární tabulky bylo potřeba zjistit společné roky dat o příjmech a cenách potravin. Zde je pomocný skript pro zjištění tohoto období:
 
 ```
@@ -47,6 +60,19 @@ JOIN price_yrs price;
 Dodatečná data o dalších evropských státech.[^1]
 
 ![Alt text](t_secondary.png)
+
+|year |cz_population|cz_gdp         |cz_gini|country               |population |gdp              |gini|
+|-----|-------------|---------------|-------|----------------------|-----------|-----------------|----|
+|2,006|10,238,905   |197,470,142,754|26.7   |Albania               |2,992,547  |9,767,379,280    |    |
+|2,006|10,238,905   |197,470,142,754|26.7   |Andorra               |80,995     |3,875,142,516    |    |
+|2,006|10,238,905   |197,470,142,754|26.7   |Austria               |8,268,641  |380,329,113,681  |29.6|
+|2,006|10,238,905   |197,470,142,754|26.7   |Belarus               |9,604,924  |44,266,566,188   |28.3|
+|2,006|10,238,905   |197,470,142,754|26.7   |Belgium               |10,547,958 |458,677,622,724  |28.1|
+|2,006|10,238,905   |197,470,142,754|26.7   |Bosnia and Herzegovina|3,765,422  |15,729,153,561   |    |
+|2,006|10,238,905   |197,470,142,754|26.7   |Bulgaria              |7,601,022  |45,869,280,339   |35.7|
+|2,006|10,238,905   |197,470,142,754|26.7   |Croatia               |4,311,159  |61,197,075,794   |    |
+|2,006|10,238,905   |197,470,142,754|26.7   |Czech Republic        |10,238,905 |197,470,142,754  |26.7|
+|2,006|10,238,905   |197,470,142,754|26.7   |Denmark               |5,437,272  |331,090,561,928  |25.9|
 
 ## 1_wage_trends.sql
 > 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
