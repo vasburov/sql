@@ -1,7 +1,13 @@
 /* 
-Secondary table of European states
+
+author: Vasyl Burov
+email: vasylburov@gmail.com
+discord: vasylburov
+
+Secondary data table (European states)
 t_Vasyl_Burov_project_SQL_secondary_final
-*/
+
+**/
 
 CREATE TABLE t_Vasyl_Burov_project_SQL_secondary_final AS 
 WITH czechia AS (
@@ -16,7 +22,8 @@ WITH czechia AS (
 	WHERE 
 		c.country = 'Czech Republic'
 		AND e.year BETWEEN 2006 AND 2018
-), europe AS (
+), 
+europe AS (
 	SELECT
 		e.year,
 		c.country,

@@ -1,5 +1,13 @@
--- 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší 
--- než růst mezd (větší než 10 %)?
+/* 
+
+author: Vasyl Burov
+email: vasylburov@gmail.com
+discord: vasylburov
+
+4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší 
+než růst mezd (větší než 10 %)?
+
+*/
 
 SELECT 
 	year,

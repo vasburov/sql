@@ -1,4 +1,12 @@
--- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+/* 
+
+author: Vasyl Burov
+email: vasylburov@gmail.com
+discord: vasylburov
+
+1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+
+*/
 
 WITH up_down_years AS (
 	SELECT 

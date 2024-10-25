@@ -1,7 +1,13 @@
 /* 
+
+author: Vasyl Burov
+email: vasylburov@gmail.com
+discord: vasylburov
+
 Primary data table
 t_Vasyl_Burov_project_SQL_primary_final
-*/
+
+**/
 	
 CREATE OR REPLACE TABLE t_Vasyl_Burov_project_SQL_primary_final AS
 WITH payroll AS (
@@ -17,7 +23,8 @@ WITH payroll AS (
 		AND p.industry_branch_code IS NOT NULL
 		AND p.payroll_year BETWEEN 2006 AND 2018
 	GROUP BY p.payroll_year, p.industry_branch_code
-), price AS (
+), 
+price AS (
 	SELECT 
 		YEAR(p.date_from) year,
 		c.code category_code,
@@ -27,7 +34,8 @@ WITH payroll AS (
 	JOIN czechia_price_category c ON p.category_code = c.code 
 	WHERE YEAR(p.date_from) BETWEEN 2006 AND 2018
 	GROUP BY YEAR(p.date_from), p.category_code
-), gdp AS (
+), 
+gdp AS (
 	SELECT 
 		year,
 		ROUND(GDP) AS gdp
