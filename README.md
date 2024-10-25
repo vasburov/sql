@@ -66,8 +66,6 @@ JOIN price_yrs price;
 ## t_Vasyl_Burov_project_SQL_secondary_final.sql
 > Dodatečná data o dalších evropských státech.[^2]
 
-![Alt text](t_secondary.png)
-
 |year |cz_population|cz_gdp         |cz_gini|country               |population |gdp              |gini|
 |-----|-------------|---------------|-------|----------------------|-----------|-----------------|----|
 |2,006|10,238,905   |197,470,142,754|26.7   |Albania               |2,992,547  |9,767,379,280    |    |
