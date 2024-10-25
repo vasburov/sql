@@ -149,4 +149,12 @@ Dodatečná data o dalších evropských státech.[^1]
 |2,013|210,983,331,026|0               |26,103|-1.6               |57   |5.1               |
 |2,006|197,470,142,754|                |20,754|                   |46   |                  |
 
+* year - Kalendářní rok, ke kterému se data vztahují.
+* gdp - Hrubý domácí produkt; celková hodnota ekonomického výkonu.
+* gdp_change_pcent - Meziroční procentuální změna HDP.
+* salary - Průměrná roční mzda v zemi.
+* salary_change_pcent - Meziroční procentuální změna průměrné mzdy.
+* price - Průměrná cena potravin.
+* price_change_pcent - Meziroční procentuální změna cen potravin.
+  
 [^1]: Pochopil jsem "jako primární přehled pro ČR" tak, že mám do každého řádku přidat sloupce s daty pro Českou republiku, aby moji kolegové mohli snadno porovnávat data evropských zemí s ČR.
