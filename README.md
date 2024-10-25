@@ -149,12 +149,14 @@ Dodatečná data o dalších evropských státech.[^1]
 |2,013|210,983,331,026|0               |26,103|-1.6               |57   |5.1               |
 |2,006|197,470,142,754|                |20,754|                   |46   |                  |
 
-* year - Kalendářní rok, ke kterému se data vztahují.
-* gdp - Hrubý domácí produkt; celková hodnota ekonomického výkonu.
-* gdp_change_pcent - Meziroční procentuální změna HDP.
-* salary - Průměrná roční mzda v zemi.
-* salary_change_pcent - Meziroční procentuální změna průměrné mzdy.
-* price - Průměrná cena potravin.
-* price_change_pcent - Meziroční procentuální změna cen potravin.
-  
+* **year** - Kalendářní rok, ke kterému se data vztahují.
+* **gdp** - Hrubý domácí produkt.
+* **gdp_change_pcent** - Meziroční procentuální změna HDP.
+* **salary** - Průměrná roční mzda v zemi.
+* **salary_change_pcent** - Meziroční procentuální změna průměrné mzdy.
+* **price** - Průměrná cena potravin.
+* **price_change_pcent** - Meziroční procentuální změna cen potravin.
+
+Na základě dat, kde ABS(gdp_change_pcent) > 3 % (včetně poklesu o -4,7 % v roce 2009) - "pokud HDP vzroste výrazněji v jednom roce". Korelace mezi změnou HDP a změnou mzdy: 0,40 (střední pozitivní korelace). Korelace mezi změnou HDP a změnou cen: 0,80 (silná pozitivní korelace). Zatímco obě vztahy jsou pozitivní, změny cen se obvykle blíže drží změn HDP.
+
 [^1]: Pochopil jsem "jako primární přehled pro ČR" tak, že mám do každého řádku přidat sloupce s daty pro Českou republiku, aby moji kolegové mohli snadno porovnávat data evropských zemí s ČR.
