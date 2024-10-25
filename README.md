@@ -39,6 +39,10 @@ FROM payroll_yrs pay
 JOIN price_yrs price;
 ```
 
+|common_min_year|common_max_year|
+|---------------|---------------|
+|2006           |2018           |
+
 ## t_Vasyl_Burov_project_SQL_secondary_final.sql
 Dodatečná data o dalších evropských státech.[^1]
 
